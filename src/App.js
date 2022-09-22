@@ -5,14 +5,10 @@ import EmbedAudio from "./Components/EmbedAudio";
 import EmbedVideo from "./Components/EmbedVideo";
 
 function App() {
-  const [text, setText] = useState("25%OFF");
-  const [status, setStatus] = useState("Copy");
 
-  const textChange = (e) => {
-    setText(e.target.value);
-    setStatus("Copy");
-  };
+  // const [status, setStatus] = useState("Copy");
 
+ 
   return (
     <div className="App">
       <h1>Google Direct Download Link Generator</h1>
