@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-const EmbedAudio = ({}) => {
+const EmbedAudio = ({
+  gLink,
+  dLink,
+  setDLink,
+  setGLink,
+  eAudio,
+  setEAudio,
+  eVideo,
+  setEVideo,
+  start,
+  setStart,
+  hidden,
+  setHidden,
+}) => {
+  const [status, setStatus] = useState("copy");
   return (
     <div className="embedAudio">
       {" "}
@@ -12,8 +26,17 @@ const EmbedAudio = ({}) => {
       <p>Audio Embed Link</p>
       <div>
         {" "}
-        <textarea></textarea>
-        <button>Copy</button>
+        <textarea readOnly value={eAudio}></textarea>
+        <button
+          className="bttn"
+          onClick={(e) => {
+            navigator.clipboard.writeText(eAudio);
+            e.preventDefault();
+            setStatus("Copied");
+          }}
+        >
+          {status}
+        </button>
       </div>
     </div>
   );
