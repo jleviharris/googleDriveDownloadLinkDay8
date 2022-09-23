@@ -5,12 +5,11 @@ const PasteLink = ({
   dLink,
   setDLink,
   setGLink,
-  eAudio,
   setEAudio,
-  eVideo,
   setEVideo,
 }) => {
   const [status, setStatus] = useState("copy");
+ 
 
   const generateLink = (e) => {
     e.preventDefault();
@@ -27,17 +26,14 @@ const PasteLink = ({
       // EMBED AUDIO
       const audio1 = '<audio width="300" height="32" controls="controls" src="';
       const audio2 = '" type="audio/mp3"></audio>';
-
       setEAudio(`${audio1}${tempDLink}${audio2}`);
 
       // Embed Video
       const getVideoLink = gLink.replace("/view?usp=sharing", "");
-
       const video1 = '<iframe src="';
       const video2 = '/preview" width="560" height="315"></iframe>';
 
       setEVideo(`${video1}${getVideoLink}${video2}`);
-      console.log(eVideo);
     } else alert("Please enter a google link");
   };
   const textChange = (e) => {
@@ -49,11 +45,11 @@ const PasteLink = ({
       {" "}
       <h1>Google Drive Link</h1>
       <h2>Paste your google drive file link below</h2>
-      <input value={gLink} onChange={(e) => textChange(e)}></input>
-      <button onClick={generateLink}>Generate Direct Download Link</button>
-      <div>
+      <input className="gLink" value={gLink} onChange={(e) => textChange(e)}></input>
+      <button className="genLinkBttn"onClick={generateLink}>Generate Direct Download Link</button>
+      <div className="dLinkBox">
         {" "}
-        <textarea readOnly value={dLink}></textarea>
+        <input className="dLink"readOnly value={dLink}  ></input>
         <button
           className="bttn"
           onClick={(e) => {

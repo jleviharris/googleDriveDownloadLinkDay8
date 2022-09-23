@@ -1,20 +1,8 @@
 import React, { useState } from "react";
 
-const EmbedAudio = ({
-  gLink,
-  dLink,
-  setDLink,
-  setGLink,
-  eAudio,
-  setEAudio,
-  eVideo,
-  setEVideo,
-  start,
-  setStart,
-  hidden,
-  setHidden,
-}) => {
+const EmbedAudio = ({ eAudio }) => {
   const [status, setStatus] = useState("copy");
+
   return (
     <div className="embedAudio">
       {" "}
@@ -24,9 +12,9 @@ const EmbedAudio = ({
         web page.
       </h2>
       <p>Audio Embed Link</p>
-      <div>
+      <div className="linkBox">
         {" "}
-        <textarea readOnly value={eAudio}></textarea>
+        <input className="eAudio" readOnly value={eAudio} autoFocus ></input>
         <button
           className="bttn"
           onClick={(e) => {

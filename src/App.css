@@ -1,19 +1,31 @@
 .App {
   display: flex;
   border: 1px solid black;
-  width: 450px;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;
-  background: steelblue;
+  background: rgb(190 204 243);
   font-size: 1rem;
-  margin-top: 20%;
-  margin-bottom: 20%;
-  height: 60%;
-  border-radius: 20px;
   text-align: center;
+}
+.block {
+  border: 1px solid black;
+  width: 50%;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.buttons button {
+  width: 100%;
+  border-radius: 0;
+  font-size: 1.25rem;
+  padding: 0.5rem;
 }
 .App li {
   list-style: none;
@@ -23,19 +35,103 @@
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  background-color: white;
+  align-items: center;
+  border-top: 0;
+}
+.pasteLink h1 {
+  font-size: 1.75rem;
+}
+.embedVideo h1 {
+  font-size: 1.75rem;
+}
+.embedAudio h1 {
+  font-size: 1.75rem;
+}
+.embedVideo h2 {
+  font-size: 1.25rem;
+
+  margin: 1rem;
+}
+.embedAudio h2 {
+  font-size: 1.25rem;
+
+  margin: 1rem;
+}
+.bttnOff {
+  background: slategray;
+}
+.bttnOn {
+  background: white;
+  border-bottom: 0;
+}
+.gLink {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+.dLink {
+  width: 100%;
+}
+.eAudio {
+  width: 100%;
+}
+.eVideo {
+  width: 100%;
+}
+.dLinkBox {
+  margin-top: 1rem;
+  display: flex;
+  width: -webkit-fill-available;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+.linkBox {
+  display: flex;
+  width: -webkit-fill-available;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+.genLinkBttn {
+  background: darkorange;
+  font-size: 1.25rem;
 }
 .embedAudio {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  background-color: white;
+  border-top: 0;
+}
+.embedAudio p {
+  margin: 0;
 }
 .embedVideo {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  background-color: white;
+  border-top: 0;
+}
+.embedVideo p {
+  margin: 0;
 }
 @media only screen and (max-width: 600px) {
   .App {
-    width: 75vw;
+    width: 100vw;
+    height: 100vh;
+  }
+  .App h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .block {
+    margin-top: 2rem;
+    width: 90vw;
+  }
+  .pages {
+    height: 100%;
+  }
+  .pasteLink {
+    /* height: 100%; */
   }
 }

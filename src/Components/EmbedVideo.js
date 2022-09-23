@@ -1,20 +1,8 @@
 import React, { useState } from "react";
 
-const EmbedVideo = ({
-  gLink,
-  dLink,
-  setDLink,
-  setGLink,
-  eAudio,
-  setEAudio,
-  eVideo,
-  setEVideo,
-  start,
-  setStart,
-  hidden,
-  setHidden,
-}) => {
+const EmbedVideo = ({ eVideo }) => {
   const [status, setStatus] = useState("copy");
+
   return (
     <div className="embedVideo">
       {" "}
@@ -24,9 +12,9 @@ const EmbedVideo = ({
         on a web page.
       </h2>
       <p>Video/Document Embed Link</p>
-      <div>
+      <div className="linkBox">
         {" "}
-        <textarea readOnly value={eVideo}></textarea>
+        <input className="eVideo" readOnly value={eVideo} autoFocus></input>
         <button
           className="bttn"
           onClick={(e) => {
